@@ -1,0 +1,35 @@
+doctype html
+html(lang='en')
+    head
+        link(rel="stylesheet" href="./style.css")
+        //- link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css")
+        meta(char="utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        meta(http-equiv='x-ua-compatible', content='ie=edge')
+        //- link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css', integrity='sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd', crossorigin='anonymous')
+        script(src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous")
+        script(src="https://fb.me/react-with-addons-15.2.1.min.js")
+        script(src="https://fb.me/react-dom-15.2.1.min.js")
+
+    body
+        .flex-col
+            #filter
+            #fog
+            #root
+            script(src='./game.js')
+            p#credits Art Credits:
+                a(href="http://opengameart.org/users/buch")  Michele Buch Bucelli, Abram Connelly, 
+                a(href="https://twitter.com/TearOfTheStar") TearOfTheStar,
+                |  and 
+                a(href="https://twitter.com/Calciumtrice") Calciumtrice
+                br
+                | Dungeon Crawler by
+                a(href='https://www.freecodecamp.com/cinders-p' id='me')  Cinders-P
+                |  || 
+                span#click Click to Toggle Fog
+            #win You slaughtered the slime lord!
+                br
+                |  You win!
+            #lose Game over!
+                br
+                |  Press 'F5' to try again.

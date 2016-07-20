@@ -1,0 +1,129 @@
+$one: 16px
+
+=nearest-neighbor()
+	image-rendering: -moz-crisp-edges
+	image-rendering:   -o-crisp-edges
+	image-rendering: -webkit-optimize-contrast
+	-ms-interpolation-mode: nearest-neighbor
+	image-rendering: pixelated
+@font-face
+	font-family: 'Silkscreen'
+	src: url('slkscr.ttf')
+
+body
+	font-family: Silkscreen
+	font-size: 16px
+	color: white
+	background-color: black
+
+.board
+	position: relative
+
+#credits
+	white-space: nowrap
+	margin-bottom: 0
+	margin-top: 9px
+	color: dimgray
+
+#click
+	cursor: pointer
+	color: lightgray
+
+#player
+	background-image: url('calciumtrice.png')
+	background-repeat: no-repeat
+	background-position: -144px -415px
+	height: 32px
+	width: 16px
+	position: absolute
+	transform: scale(1.5, 1.5)
+	transition: all 0.18s ease-out
+	+nearest-neighbor()
+	z-index: 5
+
+.trans
+	position: absolute
+	z-index: 2
+
+.tileRow
+	white-space: nowrap
+	margin-left: 3px
+
+.tile
+	height: $one
+	width: $one
+	+nearest-neighbor()
+	background-image: url('environment.png')
+	background-repeat: no-repeat
+	display: inline-block
+	transform: scale(1.5, 1.5)
+	margin-bottom: 5px
+	margin-right: 8px
+
+
+.itembg
+	background-image: url('potion_tileset.png')
+
+.mob
+	height: $one * 2
+	position: absolute
+
+#win,
+#lose
+	position: absolute
+	text-align: center
+	top: 50%
+	left: 50%
+	transform: translate(-55%, -100%)
+	font-size: 3rem
+	white-space: nowrap
+	z-index: 10
+	text-shadow: 0 0 15px rgba(0,0,0,0.9)
+	opacity: 0
+	transition: opacity 1s ease-out
+
+a,
+a:focus,
+a:visited,
+	text-decoration: none
+	color: darkgray
+
+#me
+	color: rgb(115, 104, 71)
+
+#fog,
+#filter
+	margin-left: -2px
+	margin-top: -5px
+	position: absolute
+	background-position: -770px -770px
+	background-repeat: repeat
+	top: 0
+	width: 850px
+	height: 855px
+	overflow: hidden
+	z-index: 5
+	transition: background-position 0.16s linear
+
+#fog
+	background-image: url('New Canvas.png')
+	z-index: 7
+#filter
+	background-image: url('filter.png')
+	z-index: 6
+	mix-blend-mode: hard-light
+
+
+@-moz-document url-prefix()
+	.tile
+		margin-bottom: 3px
+	#player
+		transition: all 0.16s ease-out
+	#board
+		margin-bottom: 10px
+
+	#allGame
+		margin-top: -3px
+	#fog,
+	#filter
+		height: 810px
